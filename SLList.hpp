@@ -24,7 +24,7 @@ public:
     T           pop_front(); // Remove the first element (node)
     void        pop_back(); // Remove the last element (node)
     void        clear();  // Clear the list
-
+    void rotate_right(unsigned amount);
 
 private:
     template <typename U>

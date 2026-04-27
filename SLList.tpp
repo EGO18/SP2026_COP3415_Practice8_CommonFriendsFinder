@@ -140,3 +140,34 @@ SLList<T>& SLList<T>::operator=(const SLList<T>& other) {
     
     return *this;
 }
+
+template <typename T>
+void SLList<T>::rotate_right(unsigned amt)
+{
+    int size = size();
+    // Empty or 1 rotations do nothing
+    if (size <= 1)
+    {
+        return;
+    }
+
+    for (int i = 0; i < amt; i++)
+    {
+
+        SLLNode<T> *oldHead = head;
+        this->head = tail;
+        head->next = oldHead;
+
+        SLLNode<T> *node = head;
+
+        while (node.next != tail)
+        {
+            node = node->next;
+        }
+
+        // node is right before tail
+
+        this->tail = node;
+        tail->next = nullptr;
+    }
+}
