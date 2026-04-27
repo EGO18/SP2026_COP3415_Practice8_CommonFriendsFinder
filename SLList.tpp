@@ -144,9 +144,8 @@ SLList<T>& SLList<T>::operator=(const SLList<T>& other) {
 template <typename T>
 void SLList<T>::rotate_right(unsigned amt)
 {
-    int size = size();
     // Empty or 1 rotations do nothing
-    if (size <= 1)
+    if (size() <= 1)
     {
         return;
     }
@@ -160,7 +159,7 @@ void SLList<T>::rotate_right(unsigned amt)
 
         SLLNode<T> *node = head;
 
-        while (node.next != tail)
+        while (node->next != tail)
         {
             node = node->next;
         }
